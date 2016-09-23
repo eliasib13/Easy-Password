@@ -39,9 +39,29 @@ class DatabaseSeeder extends Seeder
 
         $passwordRegisters = [
             [
-                'userId' => 1,
+                'user_id' => User::where('email', '=', 'admin@email.com')->first()->id,
                 'name' => 'My Social Network',
                 'password' => encrypt('myPassword')
+            ],
+            [
+                'user_id' => User::where('email', '=', 'admin@email.com')->first()->id,
+                'name' => 'My YouTube',
+                'password' => encrypt('myYouTubePassword')
+            ],
+            [
+                'user_id' => User::where('email', '=', 'usertest@email.com')->first()->id,
+                'name' => 'My LinkedIn',
+                'password' => encrypt('myLinkedInPassword')
+            ],
+            [
+                'user_id' => User::where('email', '=', 'usertest@email.com')->first()->id,
+                'name' => 'My Facebook',
+                'password' => encrypt('myFacebookPassword')
+            ],
+            [
+                'user_id' => User::where('email', '=', 'usertest@email.com')->first()->id,
+                'name' => 'My Twitter',
+                'password' => encrypt('myTwitterPassword')
             ]
         ];
 

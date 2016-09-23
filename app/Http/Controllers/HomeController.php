@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 class HomeController extends Controller {
     public function __construct() {
 
     }
 
     public function index() {
-        return 'HomeController: OK <br/> <a href="' . url("/doLogout") .  '">Logout</a>';
+        $passwordRegisters = Auth::user()->passwordRegisters()->get();
+
+        return view('home', [
+            'passwordRegisters' => $passwordRegisters
+        ]);
     }
 }

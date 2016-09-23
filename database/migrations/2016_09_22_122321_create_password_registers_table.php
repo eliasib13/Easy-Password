@@ -17,12 +17,12 @@ class CreatePasswordRegistersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('password');
-            $table->integer('userId')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
 
         Schema::table('password_registers', function (Blueprint $table) {
-            $table->foreign('userId')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
