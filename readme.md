@@ -1,27 +1,21 @@
-# Laravel PHP Framework
+# Easy Password
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Super easy online passwords manager, built with [Laravel] ❤️.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+## How does it works?
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+Easy! Just remember the password to log in to Easy Password. Then, you'll see all the passwords you stored.
 
-## Official Documentation
+You can also edit your stored passwords, add new ones, even generate a random password according to some parameters: length, type of characters, etc. 🤘🤘
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## And... What else?
 
-## Contributing
+It'd be fun to integrate this to the explorer (via extension) and just by right clicking a password input, you can select a password from Easy Password and paste it automatically! 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+(But time to time...)
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+***[Eliasib J. García Martín, 2016](https://github.com/eliasib13/)***
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+[Laravel]: https://laravel.com/

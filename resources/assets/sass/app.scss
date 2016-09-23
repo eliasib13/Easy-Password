@@ -1,9 +1,16 @@
-
-// Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-
 // Variables
 @import "variables";
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+body {
+    background-color: $body-bg;
+    background-image: url("../img/lock.png");
+    background-repeat: no-repeat;
+    background-position: right 15% top 360px; 
+    color: $text-color;
+}
+
+.main-content {
+    min-width: 380px;
+    max-width: 65%;
+    margin: 175px auto 0;
+}
