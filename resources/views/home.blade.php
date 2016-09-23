@@ -6,6 +6,8 @@
         <h3>My Password Registers</h3>
         <a href="{{ url('doLogout') }}"><i class="icon sign out"></i>Logout</a>
         <div class="ui segment">
+            <button class="ui button green inverted" onclick="$('.ui.modal.new-password').modal('show');"><i class="icon plus"></i>Add password</button>
+            <div class="ui divider"></div>
             <div class="ui accordion">
                 @foreach($passwordRegisters as $register)
                     <div class="title">
@@ -19,6 +21,27 @@
                     </div>
                 @endforeach
             </div>
+        </div>
+    </div>
+    
+    <div class="ui modal new-password small">
+        <i class="close icon"></i>
+        <div class="header">
+            Add Password
+        </div>
+        <div class="content">
+            <form class="ui form" method="post" action="{{ url('/addPassword') }}">
+                {{ csrf_field() }}
+                <div class="field">
+                    <label>Name</label>
+                    <input type="text" name="name" placeholder="My service" />
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="text" name="password" placeholder="My password" />
+                </div>
+                <button class="ui button" type="submit">Save</button>
+            </form>
         </div>
     </div>
 @endsection

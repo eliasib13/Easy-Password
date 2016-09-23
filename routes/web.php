@@ -16,3 +16,4 @@ Route::post('/doLogin', 'WelcomeController@doLogin');
 Route::get('/doLogout', 'WelcomeController@doLogout');
 
 Route::get('/home', 'HomeController@index')->middleware('isLogged');
+Route::post('/addPassword', 'HomeController@addPassword')->middleware('isLogged');
