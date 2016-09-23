@@ -44,5 +44,8 @@
                 @endif
             </div>
         </div>
+
+        <!-- Custom JS -->
+        <script src="js/app.js"></script>
     </body>
 </html>
