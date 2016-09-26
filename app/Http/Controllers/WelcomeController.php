@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use App\User;
 
 class WelcomeController extends Controller {
 
@@ -18,10 +19,14 @@ class WelcomeController extends Controller {
         }
 
         $errorLogin = Session::get('errorLogin', false);
+        $successRegister = Session::get('successRegister', false);
+        $errorRegister = Session::get('errorRegister', false);
         $email = Session::get('email', '');
 
         return view('welcome', [
             'errorLogin' => $errorLogin,
+            'successRegister' => $successRegister,
+            'errorRegister' => $errorRegister,
             'email' => $email
         ]);
     }
@@ -42,4 +47,26 @@ class WelcomeController extends Controller {
         return redirect('/');
     }
 
+    public function addUser(Request $request) {
+        if ($request->input('new-password') != $request->input('new-password-check')) {
+            Session::flash('errorRegister', true);
+            return redirect('/');
+        }
+
+        try {
+            $newUser = new User;
+            $newUser->email = $request->input('email');
+            $newUser->name = $request->input('name');
+            $newUser->password = bcrypt($request->input('new-password'));
+
+            $newUser->save();
+
+            Session::flash('successRegister', true);
+            return redirect('/');
+        }
+        catch (\Exception $e) {
+            Session::flash('errorRegister', true);
+            return redirect('/');
+        }
+    }
 }

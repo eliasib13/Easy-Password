@@ -1,9 +1,27 @@
 
-if ($('.ui.error.message').length) {
+if ($('.ui.error.message.wrong-credentials').length) {
     $('input[type!=submit]').transition('shake');
 }
 
 $('.ui.accordion').accordion();
+
+$('#new-user-button').click(function() {
+   $('.ui.modal.new-user').modal('show');
+});
+
+$('.check-password').on('change', function() {
+   var password = $('input[name=new-password]').val(),
+       password_check = $('input[name=new-password-check]').val();
+
+    if (password == password_check) {
+        $('.passwords-match-error').hide();
+        $('.new-user-add').removeClass('disabled');
+    }
+    else {
+        $('.passwords-match-error').show();
+        $('.new-user-add').addClass('disabled');
+    }
+});
 
 $('.update-register').click(function() {
    var id = $(this).attr('item-id'),
