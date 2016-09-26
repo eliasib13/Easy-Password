@@ -17,3 +17,9 @@ Route::get('/doLogout', 'WelcomeController@doLogout');
 
 Route::get('/home', 'HomeController@index')->middleware('isLogged');
 Route::post('/addPassword', 'HomeController@addPassword')->middleware('isLogged');
+
+
+Route::group(['prefix' => 'api'], function() {
+    Route::post('register/update', 'ApiController@updateRegister');
+    Route::get('test', function() {return 'test';});
+});

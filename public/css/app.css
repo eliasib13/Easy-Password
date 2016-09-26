@@ -10,4 +10,8 @@ body {
   max-width: 65%;
   margin: 175px auto 0; }
 
+.limit-registers-height {
+  max-height: 210px;
+  overflow: scroll; }
+
 /*# sourceMappingURL=app.css.map */
