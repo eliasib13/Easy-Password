@@ -29,7 +29,7 @@
                             <input type="text" id="value-{{ $register->id }}" value="{{ decrypt($register->password) }}" />
                         </div>
                         <button class="ui toggle button update-register" item-id="{{ $register->id }}"><i class="icon pencil"></i>Update</button>
-                        <button class="ui red button" item-id="{{ $register->id }}"><i class="icon remove"></i>Remove</button>
+                        <button class="ui red button remove-register" item-id="{{ $register->id }}"><i class="icon remove"></i>Remove</button>
                     </div>
                 @endforeach
             </div>
@@ -81,6 +81,43 @@
     <div class="ui basic modal updated-register">
         <div class="header">
             Updated!
+        </div>
+        <div class="image content">
+            <div class="image">
+                <i class="icon checkmark"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui basic modal removing-register">
+        <div class="header">
+            Are you sure?
+        </div>
+        <div class="image content">
+            <div class="image">
+                <i class="icon trash"></i>
+            </div>
+            <div class="description">
+                <p>This action can't be reverted.</p>
+            </div>
+        </div>
+        <div class="actions">
+            <div class="two fluid ui inverted buttons">
+                <div class="ui cancel red basic inverted button remove-register-cancel">
+                    <i class="remove icon"></i>
+                    No
+                </div>
+                <div class="ui ok green basic inverted button remove-register-confirm">
+                    <i class="checkmark icon"></i>
+                    Yes
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui basic modal removed-register">
+        <div class="header">
+            Removed!
         </div>
         <div class="image content">
             <div class="image">

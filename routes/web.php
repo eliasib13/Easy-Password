@@ -21,5 +21,6 @@ Route::post('/addPassword', 'HomeController@addPassword')->middleware('isLogged'
 
 Route::group(['prefix' => 'api'], function() {
     Route::post('register/update', 'ApiController@updateRegister');
+    Route::delete('register/delete', 'ApiController@deleteRegister');
     Route::get('test', function() {return 'test';});
 });

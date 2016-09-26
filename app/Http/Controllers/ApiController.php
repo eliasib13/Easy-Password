@@ -32,4 +32,21 @@ class ApiController extends Controller
             ]);
         }
     }
+
+    public function deleteRegister(Request $request) {
+        try {
+            $register = PasswordRegister::where('id', '=', $request->input('id'))->first();
+
+            $register->delete();
+
+            return response()->json([
+                'status' => 'OK'
+            ]);
+        }
+        catch (\Exception $e) {
+            return response()->json([
+                'status' => 'Error'
+            ]);
+        }
+    }
 }

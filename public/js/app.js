@@ -32,3 +32,37 @@ $('.update-register').click(function() {
         }
     });
 });
+
+$('.remove-register').click(function() {
+    $('.ui.modal.removing-register').attr('reg-id', $(this).attr('item-id'));
+    $('.ui.modal.removing-register').modal('show');
+});
+
+$('.remove-register-cancel').click(function() {
+    $('.ui.modal.removing-register').attr('reg-id', '');
+    return true;
+});
+
+$('.remove-register-confirm').click(function() {
+    var id = $('.ui.modal.removing-register').attr('reg-id');
+    $('.ui.modal.removing-register').attr('reg-id', '');
+
+    $.ajax({
+        method: 'DELETE',
+        data: {
+            id: id
+        },
+        url: 'api/register/delete',
+        success: function (data) {
+            if (data.status == 'OK') {
+                $('.ui.modal.removing-register').modal('hide');
+                $('.ui.modal.updated-register').modal('show');
+
+                setTimeout(function() {
+                    location.reload();
+                }, 1300);
+            }
+        }
+    });
+});
+
