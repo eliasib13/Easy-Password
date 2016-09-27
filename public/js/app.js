@@ -66,7 +66,7 @@ $('.remove-register-confirm').click(function() {
     $('.ui.modal.removing-register').attr('reg-id', '');
 
     $.ajax({
-        method: 'DELETE',
+        method: 'POST',
         data: {
             id: id
         },
